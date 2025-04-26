@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.table import Table
 from rich.prompt import Prompt
-from bank_operator import bank_operator
+from bank_operator import BankOperator
 
 console = Console()
 
@@ -28,17 +28,17 @@ def menu():
         choice = Prompt.ask("👉 Choose option", choices=[str(i) for i in range(1, 8)], default="7")
 
         if choice == '1':
-            bank_operator.create_user()
+            BankOperator.create_user()
         elif choice == '2':
-            bank_operator.list_users()
+            BankOperator.list_users()
         elif choice == '3':
-            bank_operator.create_account()
+            BankOperator.create_account()
         elif choice == '4':
-            bank_operator.deposit_money()
+            BankOperator.deposit_money()
         elif choice == '5':
-            bank_operator.withdraw_money()
+            BankOperator.withdraw_money()
         elif choice == '6':
-            bank_operator.view_transactions()
+            BankOperator.view_transactions()
         elif choice == '7':
             console.print("\n👋 Exiting... Thank you for using the Bank System!", style="bold green")
             break
